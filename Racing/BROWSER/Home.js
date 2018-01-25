@@ -9,7 +9,7 @@ Racing.Home = CLASS({
 		let idle1Sound = SOUND({
 			wav : Racing.R('idle.wav'),
 			isLoop : true,
-			gain : 1
+			volume : 1
 		});
 		
 		idle1Sound.play();
@@ -17,7 +17,7 @@ Racing.Home = CLASS({
 		let gear1Sound = SOUND({
 			wav : Racing.R('gear1.wav'),
 			isLoop : true,
-			gain : 0
+			volume : 0
 		});
 		
 		gear1Sound.play();
@@ -25,7 +25,7 @@ Racing.Home = CLASS({
 		let gear2Sound = SOUND({
 			wav : Racing.R('gear2.wav'),
 			isLoop : true,
-			gain : 0
+			volume : 0
 		});
 		
 		gear2Sound.play();
@@ -64,8 +64,8 @@ Racing.Home = CLASS({
 				x = 1;
 			}
 			
-			idle1Sound.setGain(Math.cos((1 - x) * 0.5 * Math.PI));
-			gear1Sound.setGain(Math.cos(x * 0.5 * Math.PI));
+			idle1Sound.setVolume(Math.cos((1 - x) * 0.5 * Math.PI));
+			gear1Sound.setVolume(Math.cos(x * 0.5 * Math.PI));
 			
 			let x2 = (100 - (speed - 50)) / 100;
 			if (x2 < 0) {
@@ -77,8 +77,8 @@ Racing.Home = CLASS({
 			gear1Sound.setPlaybackRate(speed / 90);
 			gear2Sound.setPlaybackRate(speed / 160);
 			
-			gear1Sound.setGain(x2 === 1 ? Math.cos(x * 0.5 * Math.PI) : Math.cos((1 - x2) * 0.5 * Math.PI));
-			gear2Sound.setGain(Math.cos(x2 * 0.5 * Math.PI));
+			gear1Sound.setVolume(x2 === 1 ? Math.cos(x * 0.5 * Math.PI) : Math.cos((1 - x2) * 0.5 * Math.PI));
+			gear2Sound.setVolume(Math.cos(x2 * 0.5 * Math.PI));
 		};
 		
 		// 키를 눌렀다.
