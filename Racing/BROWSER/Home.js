@@ -57,7 +57,7 @@ Racing.Home = CLASS({
 			speedPanel.empty();
 			speedPanel.append(speed);
 			
-			let x = (10 - speed) / 10;
+			let x = (20 - speed) / 20;
 			if (x < 0) {
 				x = 0;
 			} else if (x > 1) {
@@ -74,7 +74,7 @@ Racing.Home = CLASS({
 				x2 = 1;
 			}
 			
-			gear1Sound.setPlaybackRate(speed / 90);
+			gear1Sound.setPlaybackRate((speed + 20) / 120);
 			gear2Sound.setPlaybackRate(speed / 160);
 			
 			gear1Sound.setVolume(x2 === 1 ? Math.cos(x * 0.5 * Math.PI) : Math.cos((1 - x2) * 0.5 * Math.PI));
